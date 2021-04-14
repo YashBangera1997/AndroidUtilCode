@@ -1139,6 +1139,8 @@ public final class EncryptUtils {
      * @param data The data.
      * @param key  The key.
      */
+    //TODO: Single line declaration done for multiple arguments
+    //FIXME: Remove the single line declaration and do it on seperate lines
     public static byte[] rc4(byte[] data, byte[] key) {
         if (data == null || data.length == 0 || key == null) return null;
         if (key.length < 1 || key.length > 256) {
