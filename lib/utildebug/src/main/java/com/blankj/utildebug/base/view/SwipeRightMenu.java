@@ -54,8 +54,6 @@ public class SwipeRightMenu extends LinearLayout {
         });
     }
 
-    //TODO: The loop with an index variable is used to iterate
-    //FIXME: Instead, the for each can be used
     private void initView() {
         int childCount = getChildCount();
         if (childCount <= 1) {
@@ -73,9 +71,7 @@ public class SwipeRightMenu extends LinearLayout {
             }
             mMenusWidth += bean.getWidth();
         }
-        for (int i = 0; i < mMenus.size(); i++) {
-            mMenus.get(i).setOpenMargin(0);
-        }
+        java.util.stream.IntStream.iterate(0, i -> i < mMenus.size(), i -> i + 1).forEach((int i) -> mMenus.get(i).setOpenMargin(0));
     }
 
     private static final int STATE_DOWN = 0;
