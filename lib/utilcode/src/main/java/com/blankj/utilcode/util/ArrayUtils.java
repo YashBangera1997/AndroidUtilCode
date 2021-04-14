@@ -1674,6 +1674,8 @@ public class ArrayUtils {
     }
 
     @Nullable
+    //TODO: Long variable instantiation is ineffective
+    //FIXME: Long variable instantiation should be replaced by Long.ValueOf()
     public static Long[] toObject(@Nullable long[] array) {
         if (array == null) {
             return null;
