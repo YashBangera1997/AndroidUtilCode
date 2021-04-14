@@ -1611,6 +1611,8 @@ public class ArrayUtils {
     }
 
     @Nullable
+    //TODO : remove paranthesis from the result[i]
+    //FIXME: remove the paranthesis from this result[i]
     public static char[] toPrimitive(@Nullable Character[] array, char valueForNull) {
         if (array == null) {
             return null;
