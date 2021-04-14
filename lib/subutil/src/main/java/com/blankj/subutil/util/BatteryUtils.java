@@ -137,6 +137,8 @@ public final class BatteryUtils {
         }
 
         @Override
+        //TODO: The Status instantiation is done inside loop
+        //FIXME: The Status instantiation can be done outside loop
         public void onReceive(Context context, final Intent intent) {
             if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
                 ThreadUtils.runOnUiThread(new Runnable() {
