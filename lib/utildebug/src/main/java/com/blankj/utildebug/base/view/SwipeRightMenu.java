@@ -54,6 +54,8 @@ public class SwipeRightMenu extends LinearLayout {
         });
     }
 
+    //TODO: The loop with an index variable is used to iterate
+    //FIXME: Instead, the for each can be used
     private void initView() {
         int childCount = getChildCount();
         if (childCount <= 1) {
