@@ -1674,8 +1674,6 @@ public class ArrayUtils {
     }
 
     @Nullable
-    //TODO: Long variable instantiation is ineffective
-    //FIXME: Long variable instantiation should be replaced by Long.ValueOf()
     public static Long[] toObject(@Nullable long[] array) {
         if (array == null) {
             return null;
@@ -1684,7 +1682,7 @@ public class ArrayUtils {
         }
         final Long[] result = new Long[array.length];
         for (int i = 0; i < array.length; i++) {
-            result[i] = new Long(array[i]);
+            result[i] = Long.valueOf(array[i]);
         }
         return result;
     }
