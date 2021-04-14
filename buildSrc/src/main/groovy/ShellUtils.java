@@ -121,6 +121,8 @@ public final class ShellUtils {
      * @param isNeedResultMsg True to return the message of result, false otherwise.
      * @return the single {@link CommandResult} instance
      */
+    //TODO: Short Variable name used
+    //FIXME: Make use of a bigger variable name for user readability
     public static CommandResult execCmd(final String[] commands,
                                         final boolean isRooted,
                                         final boolean isNeedResultMsg) {
