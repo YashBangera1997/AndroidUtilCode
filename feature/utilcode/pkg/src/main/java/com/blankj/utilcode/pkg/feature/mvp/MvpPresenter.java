@@ -20,15 +20,14 @@ public class MvpPresenter extends BasePresenter<MvpView>
     }
 
     @Override
-    //TODO: Too short of a variable name
-    //FIXME: s is a short variable name, instead use a longer variable name
+
     public void updateMsg() {
         getView().setLoadingVisible(true);
         getModel(MvpModel.class).requestUpdateMsg(new Utils.Consumer<String>() {
             @Override
-            public void accept(String s) {
+            public void accept(String message) {
                 if (isAlive()) {
-                    getView().showMsg(s);
+                    getView().showMsg(message);
                     getView().setLoadingVisible(false);
                 } else {
                     LogUtils.iTag(MvpView.TAG, "destroyed");
