@@ -121,8 +121,6 @@ public final class ShellUtils {
      * @param isNeedResultMsg True to return the message of result, false otherwise.
      * @return the single {@link CommandResult} instance
      */
-    //TODO: Short Variable name used
-    //FIXME: Make use of a bigger variable name for user readability
     public static CommandResult execCmd(final String[] commands,
                                         final boolean isRooted,
                                         final boolean isNeedResultMsg) {
@@ -135,7 +133,7 @@ public final class ShellUtils {
         BufferedReader errorResult = null;
         StringBuilder successMsg = null;
         StringBuilder errorMsg = null;
-        DataOutputStream os = null;
+        DataOutputStream outputStream = null;
         try {
             process = Runtime.getRuntime().exec(isRooted ? "su" : "sh");
             os = new DataOutputStream(process.getOutputStream());
