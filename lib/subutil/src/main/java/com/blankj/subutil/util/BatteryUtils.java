@@ -137,8 +137,7 @@ public final class BatteryUtils {
         }
 
         @Override
-        //TODO: The Status instantiation is done inside loop
-        //FIXME: The Status instantiation can be done outside loop
+
         public void onReceive(Context context, final Intent intent) {
             if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
                 ThreadUtils.runOnUiThread(new Runnable() {
@@ -146,8 +145,9 @@ public final class BatteryUtils {
                     public void run() {
                         int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
                         int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, BatteryStatus.UNKNOWN);
+                        Status statusVar = new Status(level, status);
                         for (OnBatteryStatusChangedListener listener : mListeners) {
-                            listener.onBatteryStatusChanged(new Status(level, status));
+                            listener.onBatteryStatusChanged(statusVar);
                         }
                     }
                 });
