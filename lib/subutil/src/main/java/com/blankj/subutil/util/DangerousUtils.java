@@ -191,7 +191,7 @@ public class DangerousUtils {
 
     //TODO: cannot have 2 assignment operations inside for loop
     //FIXME: len = s.length() should be outside the for loop
-    private static boolean isSpace(final String s) {
+    private static boolean isSpace(final String s) { 
         if (s == null) return true;
         for (int i = 0, len = s.length(); i < len; ++i) {
             if (!Character.isWhitespace(s.charAt(i))) {
