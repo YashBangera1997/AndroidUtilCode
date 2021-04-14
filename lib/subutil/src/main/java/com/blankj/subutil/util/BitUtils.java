@@ -39,12 +39,13 @@ public final class BitUtils {
      * @param value  只能取值为 0, 或 1, 所有大于0的值作为1处理, 所有小于0的值作为0处理
      * @return 运算后的结果数
      */
+    //TODO: The parenthesis around ~mask is not needed
+    //FIXME: The parenthesis around ~mask is not needed
     public static byte setBitValue(byte source, int pos, byte value) {
 
         byte mask = (byte) (1 << pos);
         if (value > 0) {
             source |= mask;
-
         } else {
             source &= (~mask);
 
