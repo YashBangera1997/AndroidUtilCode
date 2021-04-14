@@ -112,6 +112,8 @@ public final class LunarUtils {
      * @param solar 公历
      * @return 阴历
      */
+    //TODO: No need to initialize solar11
+    //FIXME: int solar11=0; must be removed.
     public static Lunar solar2Lunar(final Solar solar) {
         Lunar lunar = new Lunar();
         int index = solar.solarYear - SOLAR_1_1[0];
