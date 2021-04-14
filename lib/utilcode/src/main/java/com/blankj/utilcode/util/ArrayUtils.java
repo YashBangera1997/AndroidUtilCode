@@ -1611,8 +1611,7 @@ public class ArrayUtils {
     }
 
     @Nullable
-    //TODO : remove paranthesis from the result[i]
-    //FIXME: remove the paranthesis from this result[i]
+
     public static char[] toPrimitive(@Nullable Character[] array, char valueForNull) {
         if (array == null) {
             return null;
@@ -1622,7 +1621,7 @@ public class ArrayUtils {
         final char[] result = new char[array.length];
         for (int i = 0; i < array.length; i++) {
             Character b = array[i];
-            result[i] = (b == null ? valueForNull : b.charValue());
+            result[i] = b == null ? valueForNull : b.charValue();
         }
         return result;
     }
